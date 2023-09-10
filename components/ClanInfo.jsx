@@ -14,7 +14,7 @@ export default function ClanInfo({ data }) {
                     {data?.infoData.map((item, index) => (
                         <div key={index} className="shadow-md rounded-lg flex items-center">
                             <div className="mr-4">
-                                <Image src={item.icon} width={24} height={24} priority />
+                                <Image alt={index} src={item.icon} width={24} height={24} priority />
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold m-0">{item?.label}</h3>

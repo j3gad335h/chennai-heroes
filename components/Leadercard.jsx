@@ -9,7 +9,7 @@ export default function LeaderCard({ data }) {
             <div className="container mx-auto p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {data?.players.map((leader, index) => (
-                        <div className="w-full p-4">
+                        <div className="w-full p-4" key={index}>
                             <section className="bg-[#463067] border-4 border-solid border-yellow-200 rounded-2xl p-6 transition-transform hover:scale-105">
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-400 text-sm">{formatLastSeenDate(leader?.lastSeen)}</span>
