@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense } from 'react'
 import { styles } from '@/utils/styles'
 
 import Image from 'next/image'
-export default async function ClanInfo({ data }) {
+export default function ClanInfo({ data }) {
 
     return (
         <div className='container mx-auto'>
@@ -37,15 +37,15 @@ export default async function ClanInfo({ data }) {
 function LeaderCard({ leader }) {
     return (
         <div className="w-full p-4">
-            <section className="bg-[#304d67] border border-orange-700 rounded-2xl p-6 transition-transform hover:scale-105">
+            <section className="bg-[#463067] border-4 border-solid border-yellow-200 rounded-2xl p-6 transition-transform hover:scale-105">
                 <div className="col-span-3">
-                    <div className="mt-6 w-28 mx-auto">
+                    <div className="mt-6 flex justify-center items-center">
                         <Image
-                            src={leader.imageSrc} // Use the image source from the leader data
+                            src={leader.imageSrc}
                             alt={`${leader.name}'s profile picture`}
-                            width={150} // Adjust the width and height as needed
-                            height={150}
-                            className="rounded-full w-28"
+                            width={160}
+                            height={160}
+
                         />
                     </div>
                 </div>

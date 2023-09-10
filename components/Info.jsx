@@ -4,6 +4,7 @@ import ClanInfo from './ClanInfo'
 import LoadingSkeleton from '@/utils/loadingSkeleton'
 import { endpoints, bearer } from '@/utils/constant'
 import { getMethod } from '@/utils/apiCall'
+import Players from './Players'
 async function getData() {
     const headers = {
         Authorization: `Bearer ${bearer}`,
@@ -69,6 +70,7 @@ async function getData() {
         description: response?.description,
         infoData: infoData,
         leaders: leaderAndCoLeaderData,
+        members: (response?.memberList || []).slice(0, 6) // Limit to the first 10 members
     }
     return data
 }
@@ -78,6 +80,7 @@ export default async function Info() {
         <>
             <Suspense fallback={<LoadingSkeleton />}>
                 <ClanInfo data={data} />
+                <Players data={data} />
             </Suspense>
         </>
     )

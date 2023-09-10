@@ -10,7 +10,7 @@ const Hero = () => {
                 <motion.h1 variants={fadeIn('left', 0.2)} initial="hidden" whileInView={'show'}
                     viewport={{ once: false, amount: 0.7 }} className="text-6xl text-[#050816] uppercase z-10 mb-0 select-none">Chennai Heroes</motion.h1>
                 <motion.h2 variants={fadeIn('right', 0.2)} initial="hidden" whileInView={'show'}
-                    viewport={{ once: false, amount: 0.7 }} className="text-3xl text-[#050816] uppercase z-10 mt-0 select-none">Slogan</motion.h2>
+                    viewport={{ once: false, amount: 0.7 }} className="text-3xl text-[#050816] uppercase z-10 mt-0 select-none">Where Legends are Born</motion.h2>
                 <div>
                     <Image src={"/home-banner.jpg"} fill />
                 </div>
