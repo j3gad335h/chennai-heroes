@@ -10,9 +10,10 @@ export default async function Home() {
     <Navbar />
     <section className={`relative w-full h-screen mx-auto`}>
       <Hero />
+      <div id="info-page" className={`relative w-full mx-auto pt-20 md:pt-24`}>
+        <Info />
+      </div>
     </section>
-    <section id="info-page" className={`relative w-full mx-auto pt-20 md:pt-24`}>
-      <Info />
-    </section>
+
   </>;
 }

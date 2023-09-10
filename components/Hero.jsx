@@ -6,15 +6,35 @@ import { slideIn, fadeIn } from "@/utils/motion";
 const Hero = () => {
     return (
         <section>
-            <div className="flex flex-col items-center">
-                <motion.h1 variants={fadeIn('left', 0.2)} initial="hidden" whileInView={'show'}
-                    viewport={{ once: false, amount: 0.7 }} className="text-6xl text-[#050816] uppercase z-10 mb-0 select-none">Chennai Heroes</motion.h1>
-                <motion.h2 variants={fadeIn('right', 0.2)} initial="hidden" whileInView={'show'}
-                    viewport={{ once: false, amount: 0.7 }} className="text-3xl text-[#050816] uppercase z-10 mt-0 select-none">Where Legends are Born</motion.h2>
-                <div>
-                    <Image src={"/home-banner.jpg"} fill />
+            <div className="relative w-full">
+                <Image
+                    src="/home-banner.jpg"
+                    alt="Banner Image"
+                    layout="responsive"
+                    width={1920}
+                    height={1080}
+                />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full z-10 hidden md:block">
+                    <motion.h1
+                        variants={fadeIn('left', 0.2)}
+                        initial="hidden"
+                        whileInView={'show'}
+                        viewport={{ once: false, amount: 0.7 }}
+                        className="text-6xl text-[#050816] uppercase z-10 mb-0 select-none"
+                    >
+                        Chennai Heroes
+                    </motion.h1>
+                    <motion.h2
+                        variants={fadeIn('right', 0.2)}
+                        initial="hidden"
+                        whileInView={'show'}
+                        viewport={{ once: false, amount: 0.7 }}
+                        className="text-3xl text-[#050816] uppercase z-10 mt-0 select-none"
+                    >
+                        Where Legends are Born
+                    </motion.h2>
                 </div>
-                <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10'>
+                <div className='absolute bottom-0 w-full flex justify-center items-center z-10 mb-10'>
                     <a href='#info-page'>
                         <div className='w-[35px] h-[64px] rounded-3xl border border-white flex justify-center items-start p-2 bg-[#050816]'>
                             <motion.div
@@ -33,6 +53,8 @@ const Hero = () => {
                 </div>
             </div>
         </section>
+
+
     )
 }
 
