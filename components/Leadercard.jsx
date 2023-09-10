@@ -14,7 +14,9 @@ export default function LeaderCard({ data }) {
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-400 text-sm">{formatLastSeenDate(leader?.lastSeen)}</span>
                                     <span class="text-emerald-400 flex items-center justify-between">
-                                        <Image src={"https://cdn.royaleapi.com/static/img/ui/64x64/trophy-fs8.png"} width={24} height={24} className="mr-2" />
+                                        <Image
+                                            alt={`${leader?.trophies}'s picture`}
+                                            src={"https://cdn.royaleapi.com/static/img/ui/64x64/trophy-fs8.png"} width={24} height={24} className="mr-2" />
                                         {leader?.trophies}
                                     </span>
                                 </div>
