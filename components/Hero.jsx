@@ -6,13 +6,12 @@ import { slideIn, fadeIn } from "@/utils/motion";
 const Hero = () => {
     return (
         <section>
-            <div className="relative w-full">
+            <div className="relative w-full h-[70vh]">
                 <Image
                     src="/home-banner.jpg"
                     alt="Banner Image"
-                    layout="responsive"
-                    width={1920}
-                    height={1080}
+                    fill={true}
+                    style={{ backgroundSize: "cover",objectFit:"cover" }}
                 />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full z-10 hidden md:block">
                     <motion.h1
@@ -36,7 +35,7 @@ const Hero = () => {
                 </div>
                 <div className='absolute bottom-0 w-full flex justify-center items-center z-10 mb-10'>
                     <a href='#info-page'>
-                        <div className='w-[35px] h-[64px] rounded-3xl border border-white flex justify-center items-start p-2 bg-[#050816]'>
+                        <div className='w-[35px] h-[64px] rounded-3xl flex justify-center items-start p-2 bg-[#050816]'>
                             <motion.div
                                 animate={{
                                     y: [0, 24, 0],

@@ -5,7 +5,7 @@ export default function LeaderCard({ data }) {
     console.log(data)
     return (
         <div className='container mx-auto'>
-            <h2 className={`${styles.sectionHeadText} text-white text-center uppercase`}>Top Players</h2>
+            <h2 className={`${styles.sectionHeadText} text-white text-center font-bold uppercase underline text-2xl mb-2`}>Top Players</h2>
             <div className="container mx-auto p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {data?.players.map((leader, index) => (

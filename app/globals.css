@@ -2,146 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
-.hash-span {
-    margin-top: -100px;
-    padding-bottom: 100px;
-    display: block;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
 }
 
-.green-gradient {
-    background: rgb(2, 0, 36);
-    background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(94, 255, 94, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(94, 255, 94, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(94, 255, 94, 1) 35%, rgba(0, 212, 255, 1) 100%);
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-.black-gradient {
-    background: #000000;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right,
-            #434343,
-            #000000);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right,
-            #434343,
-            #000000);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* Rotate image */
+.r-hover figure img {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
-.violet-gradient {
-    background: #804dee;
-    background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-    background: -webkit-linear-gradient(-90deg,
-            #804dee 0%,
-            rgba(60, 51, 80, 0) 100%);
-}
-
-.green-pink-gradient {
-    background: "#00cea8";
-    background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-    background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-}
-
-.orange-text-gradient {
-    background: #f12711;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top,
-            #f12711,
-            #f5af19);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top,
-            #f12711,
-            #f5af19);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.green-text-gradient {
-    background: #11998e;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top,
-            #11998e,
-            #38ef7d);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top,
-            #11998e,
-            #38ef7d);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.blue-text-gradient {
-    /* background: -webkit-linear-gradient(#eee, #333); */
-    background: #56ccf2;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top,
-            #2f80ed,
-            #56ccf2);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top,
-            #2f80ed,
-            #56ccf2);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.pink-text-gradient {
-    background: #ec008c;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top,
-            #ec008c,
-            #fc6767);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top,
-            #ec008c,
-            #fc6767);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-@keyframes border-gradient {
-    0% {
-        border-image-source: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
-        border-image-slice: 1;
-    }
-
-    100% {
-        border-image-source: linear-gradient(45deg, #0000ff, #00ff00, #ff0000);
-        border-image-slice: 1;
-    }
-}
-
-.border-gradient-animation {
-    animation: border-gradient 3s linear infinite;
-}
-
-.border-gradient {
-    border-color: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
-}
-
-.page-color {
-    background-color: #050816;
-    color: white;
-}
-
-.MuiDataGrid-cell {
-    background-color: #050816;
-    color: white;
-}
-
-.MuiTableSortLabel-icon {
-    color: white !important;
-}
-
-.MuiTableCell-root {
-    color: white;
-}
-
-.MuiToolbar-root {
-    color: white;
+.r-hover figure:hover img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }

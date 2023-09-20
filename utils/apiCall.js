@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+export const revalidate = 3600 
 const getMethod = async (url, params, headers = {}) => {
   try {
     const response = await axios.get(url, {
