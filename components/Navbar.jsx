@@ -14,9 +14,22 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import Link from 'next/link';
 const drawerWidth = 240;
-const navItems = ['Info', 'Players', 'War'];
+const navItems = [
+    {
+        name: 'Info',
+        link: '/clan-info'
+    },
+    {
+        name: 'Players',
+        link: '/players'
+    },
+    {
+        name: 'War',
+        link: '/war-info'
+    }
+];
 
 function Navbar(props) {
     const { window } = props;
@@ -27,16 +40,20 @@ function Navbar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }} >
+        <Box sx={{ textAlign: 'center' }}>
+            <Typography variant="h6" sx={{ my: 2 }}>
                 Chennai Heroes
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                    <ListItem key={item.link} disablePadding>
+                        <ListItemButton
+                            component="a"
+                            href={item.link}
+                            onClick={handleDrawerToggle}
+                        >
+                            <ListItemText primary={item.name} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -44,7 +61,8 @@ function Navbar(props) {
         </Box>
     );
 
-    const container = window !== undefined ? () => window().document.body : undefined;
+    const container =
+        window !== undefined ? () => window().document.body : undefined;
 
     return (
         <Box className="flex">
@@ -69,8 +87,13 @@ function Navbar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
-                                {item}
+                            <Button
+                                key={item.link}
+                                color="inherit"
+                                component="a"
+                                href={item.link}
+                            >
+                                {item.name}
                             </Button>
                         ))}
                     </Box>
@@ -87,7 +110,10 @@ function Navbar(props) {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': {
+                            boxSizing: 'border-box',
+                            width: drawerWidth,
+                        },
                     }}
                 >
                     {drawer}
@@ -96,6 +122,5 @@ function Navbar(props) {
         </Box>
     );
 }
-
 
 export default Navbar;

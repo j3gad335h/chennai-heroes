@@ -7,10 +7,9 @@ import Players from "@/components/Players";
 export default async function Home() {
 
   return <>
-    <Navbar />
     <section className={`relative w-full h-screen mx-auto`}>
       <Hero />
-      <div id="info-page" className={`relative w-full mx-auto pt-20 md:pt-24`}>
+      <div className={`relative w-full mx-auto`}>
         <Info />
       </div>
     </section>

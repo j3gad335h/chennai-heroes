@@ -10,7 +10,8 @@ export const getMethod = async (url, params, headers = {}) => {
     const response = await fetch(`${url}?${queryParams.toString()}`, {
       method: 'GET',
       headers: { ...headers },
-      cache: 'no-store', // Place the cache option here
+      // cache: 'no-store', // Place the cache option here
+      next: { revalidate: 3600 }
     });
 
     if (!response.ok) {

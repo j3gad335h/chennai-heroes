@@ -78,10 +78,13 @@ export default async function Info() {
     const data = await getData()
     return (
         <>
-            <Suspense fallback={<LoadingSkeleton />}>
-                <ClanInfo data={data} />
-                <Players data={data} />
-            </Suspense>
+            <section>
+                <Suspense fallback={<LoadingSkeleton />}>
+                    <ClanInfo data={data} />
+                    <Players data={data} />
+                </Suspense>
+            </section>
+
         </>
     )
 }
